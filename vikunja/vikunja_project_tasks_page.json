@@ -1,0 +1,27 @@
+{
+  "id": "vikunja_project_tasks_page",
+  "name": "vikunja_project_tasks_page",
+  "source": "vikunja",
+  "request": "curl -sS -H \"Authorization: Bearer $VIKUNJA_API_KEY\" \"${VIKUNJA_BASE_URL%/}/api/v1/projects/<project_id>/tasks?sort_by[]=id&order_by[]=asc&per_page=300&page=1\"",
+  "format": "json",
+  "notes": "Keep the compact flat task fields used for pagination fallback and task lookup by identifier or index.",
+  "allow": [
+    "[].id",
+    "[].title",
+    "[].description",
+    "[].identifier",
+    "[].index",
+    "[].done",
+    "[].bucket_id",
+    "[].priority",
+    "[].due_date",
+    "[].created",
+    "[].updated",
+    "[].labels",
+    "[].assignees",
+    "[].related_tasks",
+    "[].created_by.id",
+    "[].created_by.name",
+    "[].created_by.username"
+  ]
+}

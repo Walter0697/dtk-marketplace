@@ -1,0 +1,18 @@
+{
+  "id": "vikunja_project_detail",
+  "name": "vikunja_project_detail",
+  "source": "vikunja",
+  "request": "curl -sS -H \"Authorization: Bearer $VIKUNJA_API_KEY\" \"${VIKUNJA_BASE_URL%/}/api/v1/projects/<project_id>\"",
+  "format": "json",
+  "notes": "Keep the project summary and view metadata needed to resolve the kanban view and bucket IDs.",
+  "allow": [
+    "id",
+    "title",
+    "identifier",
+    "views[].id",
+    "views[].title",
+    "views[].view_kind",
+    "views[].default_bucket_id",
+    "views[].done_bucket_id"
+  ]
+}

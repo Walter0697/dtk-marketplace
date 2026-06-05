@@ -1,0 +1,19 @@
+{
+  "id": "cloudflare_custom_hostnames_list",
+  "name": "cloudflare_custom_hostnames_list",
+  "source": "cloudflare",
+  "request": "curl -sS -H \"Authorization: Bearer $CLOUDFLARE_API_TOKEN\" \"https://api.cloudflare.com/client/v4/zones/968ebf1e0f84bbeb11be2b39af01c37d/custom_hostnames\"",
+  "format": "json",
+  "content_path": "result",
+  "notes": "Keep the hostname identity and status fields needed to inspect custom hostname provisioning.",
+  "allow": [
+    "[].id",
+    "[].hostname",
+    "[].ssl.method",
+    "[].ssl.type",
+    "[].ssl.status",
+    "[].status",
+    "[].created_on",
+    "[].modified_on"
+  ]
+}

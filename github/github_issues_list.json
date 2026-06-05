@@ -1,0 +1,9 @@
+{
+  "id": "github_issues_list",
+  "name": "github_issues_list",
+  "source": "github",
+  "request": "curl -sS \"https://api.github.com/repos/rust-lang/rust/issues?state=all&per_page=5\"",
+  "format": "json",
+  "notes": "Keep issue/PR identity, state, labels, assignees, comment count, timestamps, and web URL. Drop list-result body and nested URL metadata.",
+  "allow": ["[].id", "[].number", "[].title", "[].html_url", "[].state", "[].state_reason", "[].locked", "[].draft", "[].user.login", "[].assignee.login", "[].assignees[].login", "[].labels[].name", "[].labels[].color", "[].milestone.number", "[].milestone.title", "[].comments", "[].created_at", "[].updated_at", "[].closed_at", "[].pull_request.html_url"]
+}

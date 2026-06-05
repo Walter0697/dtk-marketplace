@@ -1,0 +1,9 @@
+{
+  "id": "github_pulls_list",
+  "name": "github_pulls_list",
+  "source": "github",
+  "request": "curl -sS \"https://api.github.com/repos/rust-lang/rust/pulls?state=all&per_page=5\"",
+  "format": "json",
+  "notes": "Keep pull request identity, state, branches, reviewers, labels, merge status, timestamps, and web URL.",
+  "allow": ["[].id", "[].number", "[].title", "[].html_url", "[].state", "[].draft", "[].locked", "[].user.login", "[].assignees[].login", "[].requested_reviewers[].login", "[].requested_teams[].slug", "[].labels[].name", "[].head.label", "[].head.ref", "[].head.sha", "[].base.label", "[].base.ref", "[].base.sha", "[].merge_commit_sha", "[].auto_merge", "[].created_at", "[].updated_at", "[].closed_at", "[].merged_at"]
+}

@@ -1,0 +1,9 @@
+{
+  "id": "github_user_detail",
+  "name": "github_user_detail",
+  "source": "github",
+  "request": "curl -sS \"https://api.github.com/users/octocat\"",
+  "format": "json",
+  "notes": "Keep public user identity, profile, counts, and timestamps.",
+  "allow": ["id", "login", "name", "type", "html_url", "company", "blog", "location", "email", "hireable", "bio", "twitter_username", "followers", "following", "public_repos", "public_gists", "created_at", "updated_at"]
+}

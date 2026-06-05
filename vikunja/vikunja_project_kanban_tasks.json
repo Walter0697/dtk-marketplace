@@ -1,0 +1,32 @@
+{
+  "id": "vikunja_project_kanban_tasks",
+  "name": "vikunja_project_kanban_tasks",
+  "source": "vikunja",
+  "request": "curl -sS -H \"Authorization: Bearer $VIKUNJA_API_KEY\" \"${VIKUNJA_BASE_URL%/}/api/v1/projects/<project_id>/views/<view_id>/tasks\"",
+  "format": "json",
+  "notes": "Keep the bucket headers plus a compact task surface for kanban task lookup and status inspection.",
+  "allow": [
+    "[].id",
+    "[].title",
+    "[].project_view_id",
+    "[].limit",
+    "[].count",
+    "[].position",
+    "[].created",
+    "[].updated",
+    "[].tasks[].id",
+    "[].tasks[].title",
+    "[].tasks[].description",
+    "[].tasks[].identifier",
+    "[].tasks[].index",
+    "[].tasks[].done",
+    "[].tasks[].bucket_id",
+    "[].tasks[].priority",
+    "[].tasks[].due_date",
+    "[].tasks[].created",
+    "[].tasks[].updated",
+    "[].tasks[].labels",
+    "[].tasks[].assignees",
+    "[].tasks[].related_tasks"
+  ]
+}

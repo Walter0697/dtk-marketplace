@@ -1,0 +1,16 @@
+{
+  "id": "notion_pages_retrieve_pat",
+  "name": "notion_pages_retrieve_pat",
+  "source": "notion",
+  "request": "curl -sS https://api.notion.com/v1/pages/<page_id> -H \"Authorization: Bearer $NOTION_TOKEN\" -H \"Notion-Version: 2026-03-11\"",
+  "notes": "Keep only the identifiers and title text needed to recognize a shared page retrieve.",
+  "format": "json",
+  "allow": [
+    "object",
+    "id",
+    "url",
+    "properties.title.id",
+    "properties.title.type",
+    "properties.title.title[].plain_text"
+  ]
+}

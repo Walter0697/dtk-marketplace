@@ -1,0 +1,15 @@
+{
+  "id": "vikunja_project_kanban_buckets",
+  "name": "vikunja_project_kanban_buckets",
+  "source": "vikunja",
+  "request": "curl -sS -H \"Authorization: Bearer $VIKUNJA_API_KEY\" \"${VIKUNJA_BASE_URL%/}/api/v1/projects/<project_id>/views/<view_id>/buckets\"",
+  "format": "json",
+  "notes": "Keep the bucket identity and ordering fields used to map Proposed/Doing/Done.",
+  "allow": [
+    "[].id",
+    "[].title",
+    "[].project_view_id",
+    "[].position",
+    "[].count"
+  ]
+}

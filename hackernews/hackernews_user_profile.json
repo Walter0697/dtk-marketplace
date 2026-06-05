@@ -1,0 +1,14 @@
+{
+  "id": "hackernews_user_profile",
+  "name": "hackernews_user_profile",
+  "source": "hackernews",
+  "request": "curl -sS \"https://hacker-news.firebaseio.com/v0/user/jl.json\"",
+  "format": "json",
+  "notes": "Keep user identity/profile fields and omit the submitted ID history, which can be very large and recoverable by ref_id.",
+  "allow": [
+    "id",
+    "created",
+    "karma",
+    "about"
+  ]
+}

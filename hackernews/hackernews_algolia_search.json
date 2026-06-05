@@ -1,0 +1,24 @@
+{
+  "id": "hackernews_algolia_search",
+  "name": "hackernews_algolia_search",
+  "source": "hackernews_algolia",
+  "request": "curl -sS \"https://hn.algolia.com/api/v1/search?query=rust&tags=story&hitsPerPage=5\"",
+  "format": "json",
+  "notes": "Compact HN Algolia search/search_by_date result pages. Drop highlight markup, child ID lists, raw tags, and timing internals.",
+  "allow": [
+    "hits[].objectID",
+    "hits[].story_id",
+    "hits[].title",
+    "hits[].url",
+    "hits[].author",
+    "hits[].points",
+    "hits[].num_comments",
+    "hits[].created_at",
+    "hits[].created_at_i",
+    "page",
+    "hitsPerPage",
+    "nbHits",
+    "nbPages",
+    "query"
+  ]
+}

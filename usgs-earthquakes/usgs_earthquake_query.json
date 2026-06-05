@@ -1,0 +1,12 @@
+{
+  "id": "usgs_earthquake_query",
+  "name": "usgs_earthquake_query",
+  "source": "usgs_earthquake",
+  "request": "curl -sS \"https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&orderby=time&limit=100\"",
+  "format": "json",
+  "notes": "Keep earthquake identity, location, magnitude, timing, severity, status, and quality fields from catalog queries.",
+  "content_path": "features",
+  "allow": [
+    "[].id", "[].properties.title", "[].properties.mag", "[].properties.magType", "[].properties.place", "[].properties.time", "[].properties.updated", "[].properties.type", "[].properties.status", "[].properties.alert", "[].properties.tsunami", "[].properties.felt", "[].properties.cdi", "[].properties.mmi", "[].properties.sig", "[].properties.nst", "[].properties.dmin", "[].properties.rms", "[].properties.gap", "[].properties.url", "[].geometry.coordinates"
+  ]
+}

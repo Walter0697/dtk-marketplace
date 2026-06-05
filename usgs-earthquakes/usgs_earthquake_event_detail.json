@@ -1,0 +1,33 @@
+{
+  "id": "usgs_earthquake_event_detail",
+  "name": "usgs_earthquake_event_detail",
+  "source": "usgs_earthquake",
+  "request": "curl -sS \"https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&eventid=<event_id>\"",
+  "format": "json",
+  "notes": "Keep event identity, location, magnitude, severity, status, quality, and links. Drop large technical product documents recoverable through DTK.",
+  "allow": [
+    "id",
+    "properties.title",
+    "properties.mag",
+    "properties.magType",
+    "properties.place",
+    "properties.time",
+    "properties.updated",
+    "properties.type",
+    "properties.status",
+    "properties.alert",
+    "properties.tsunami",
+    "properties.felt",
+    "properties.cdi",
+    "properties.mmi",
+    "properties.sig",
+    "properties.nst",
+    "properties.dmin",
+    "properties.rms",
+    "properties.gap",
+    "properties.net",
+    "properties.code",
+    "properties.url",
+    "geometry.coordinates"
+  ]
+}

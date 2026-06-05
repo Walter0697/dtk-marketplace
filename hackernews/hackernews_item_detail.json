@@ -1,0 +1,23 @@
+{
+  "id": "hackernews_item_detail",
+  "name": "hackernews_item_detail",
+  "source": "hackernews",
+  "request": "curl -sS \"https://hacker-news.firebaseio.com/v0/item/8863.json\"",
+  "format": "json",
+  "notes": "Keep the fields needed to identify and reason about Hacker News stories, comments, jobs, polls, and poll options.",
+  "allow": [
+    "id",
+    "type",
+    "by",
+    "time",
+    "title",
+    "url",
+    "text",
+    "score",
+    "descendants",
+    "parent",
+    "poll",
+    "deleted",
+    "dead"
+  ]
+}

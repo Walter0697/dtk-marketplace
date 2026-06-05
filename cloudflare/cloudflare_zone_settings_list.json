@@ -1,0 +1,14 @@
+{
+  "id": "cloudflare_zone_settings_list",
+  "name": "cloudflare_zone_settings_list",
+  "source": "cloudflare",
+  "request": "curl -sS -H \"Authorization: Bearer $CLOUDFLARE_API_TOKEN\" \"https://api.cloudflare.com/client/v4/zones/968ebf1e0f84bbeb11be2b39af01c37d/settings\"",
+  "format": "json",
+  "content_path": "result",
+  "notes": "Keep the zone setting identity and editable/value fields while trimming the noisy metadata envelope.",
+  "allow": [
+    "[].id",
+    "[].value",
+    "[].editable"
+  ]
+}

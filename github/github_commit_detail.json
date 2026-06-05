@@ -1,0 +1,9 @@
+{
+  "id": "github_commit_detail",
+  "name": "github_commit_detail",
+  "source": "github",
+  "request": "curl -sS \"https://api.github.com/repos/rust-lang/rust/commits/<sha>\"",
+  "format": "json",
+  "notes": "Keep commit identity, message, authorship, verification result, stats, changed-file summaries, and web URL. Drop patches and duplicate API URLs.",
+  "allow": ["sha", "html_url", "commit.message", "commit.author.name", "commit.author.email", "commit.author.date", "commit.committer.name", "commit.committer.email", "commit.committer.date", "commit.verification.verified", "commit.verification.reason", "commit.verification.verified_at", "author.login", "committer.login", "parents[].sha", "stats.total", "stats.additions", "stats.deletions", "files[].sha", "files[].filename", "files[].status", "files[].additions", "files[].deletions", "files[].changes", "files[].blob_url"]
+}

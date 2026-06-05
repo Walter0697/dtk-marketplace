@@ -1,0 +1,9 @@
+{
+  "id": "github_contributors_list",
+  "name": "github_contributors_list",
+  "source": "github",
+  "request": "curl -sS \"https://api.github.com/repos/rust-lang/rust/contributors?per_page=5\"",
+  "format": "json",
+  "notes": "Keep contributor identity, profile URL, type, and contribution count.",
+  "allow": ["[].id", "[].login", "[].html_url", "[].type", "[].site_admin", "[].contributions"]
+}

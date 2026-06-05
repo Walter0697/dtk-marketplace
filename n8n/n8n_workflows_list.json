@@ -1,0 +1,16 @@
+{
+  "id": "n8n_workflows_list",
+  "name": "n8n_workflows_list",
+  "source": "n8n",
+  "request": "curl -sS -H \"X-N8N-API-KEY: $N8N_API_TOKEN\" \"${N8N_BASE_URL%/}/api/v1/workflows\"",
+  "format": "json",
+  "content_path": "data",
+  "notes": "Keep the compact workflow list fields needed for browsing and status checks, while dropping the full workflow graph payload.",
+  "allow": [
+    "[].id",
+    "[].name",
+    "[].active",
+    "[].isArchived",
+    "[].updatedAt"
+  ]
+}

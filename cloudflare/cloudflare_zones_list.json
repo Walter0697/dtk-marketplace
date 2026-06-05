@@ -1,0 +1,15 @@
+{
+  "id": "cloudflare_zones_list",
+  "name": "cloudflare_zones_list",
+  "source": "cloudflare",
+  "request": "curl -sS \"https://api.cloudflare.com/client/v4/zones?per_page=5\"",
+  "format": "json",
+  "notes": "Keep only the zone identity and read-scope fields needed to choose a zone.",
+  "content_path": "result",
+  "allow": [
+    "[].id",
+    "[].name",
+    "[].status",
+    "[].account.id"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "id": "github_search_issues",
+  "name": "github_search_issues",
+  "source": "github",
+  "request": "curl -sS \"https://api.github.com/search/issues?q=repo:rust-lang/rust+is:issue&per_page=5\"",
+  "format": "json",
+  "notes": "Keep issue/PR search identity, state, labels, assignees, comments, score, timestamps, and web URL.",
+  "content_path": "items",
+  "allow": ["[].id", "[].number", "[].title", "[].html_url", "[].repository_url", "[].state", "[].state_reason", "[].locked", "[].draft", "[].user.login", "[].assignee.login", "[].assignees[].login", "[].labels[].name", "[].milestone.number", "[].milestone.title", "[].comments", "[].score", "[].created_at", "[].updated_at", "[].closed_at", "[].pull_request.html_url"]
+}

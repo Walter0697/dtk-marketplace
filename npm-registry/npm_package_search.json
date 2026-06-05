@@ -1,0 +1,26 @@
+{
+  "id": "npm_package_search",
+  "name": "npm_package_search",
+  "source": "npm_registry",
+  "request": "curl -sS \"https://registry.npmjs.org/-/v1/search?text=react&size=10\"",
+  "format": "json",
+  "notes": "Keep package identity, popularity, quality, maintenance, and links from npm search results. Drop publisher emails, maintainers, flags, and redundant scoring fields.",
+  "content_path": "objects",
+  "allow": [
+    "[].package.name",
+    "[].package.version",
+    "[].package.description",
+    "[].package.license",
+    "[].package.date",
+    "[].package.links.homepage",
+    "[].package.links.repository",
+    "[].package.links.bugs",
+    "[].package.links.npm",
+    "[].downloads.monthly",
+    "[].downloads.weekly",
+    "[].dependents",
+    "[].score.detail.popularity",
+    "[].score.detail.quality",
+    "[].score.detail.maintenance"
+  ]
+}

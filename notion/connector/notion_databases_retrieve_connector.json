@@ -1,0 +1,16 @@
+{
+  "id": "notion_databases_retrieve_connector",
+  "name": "notion_databases_retrieve_connector",
+  "source": "notion",
+  "request": "curl -sS https://api.notion.com/v1/databases/<database_id> -H \"Authorization: Bearer $NOTION_CONNECTOR_TOKEN\" -H \"Notion-Version: 2026-03-11\"",
+  "notes": "Keep only the database identity, title text, and data source ids needed to recognize the shared database.",
+  "format": "json",
+  "allow": [
+    "object",
+    "id",
+    "title[].plain_text",
+    "data_sources[].id",
+    "parent",
+    "url"
+  ]
+}

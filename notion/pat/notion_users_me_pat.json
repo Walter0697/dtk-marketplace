@@ -1,0 +1,15 @@
+{
+  "id": "notion_users_me_pat",
+  "name": "notion_users_me_pat",
+  "source": "notion",
+  "request": "curl -sS https://api.notion.com/v1/users/me -H \"Authorization: Bearer $NOTION_TOKEN\" -H \"Notion-Version: 2026-03-11\"",
+  "notes": "Keep the current user or bot identity and workspace metadata for PAT-authenticated Notion calls.",
+  "format": "json",
+  "allow": [
+    "id",
+    "name",
+    "type",
+    "bot.workspace_name",
+    "bot.workspace_id"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "id": "notion_users_list_connector",
+  "name": "notion_users_list_connector",
+  "source": "notion",
+  "request": "curl -sS https://api.notion.com/v1/users -H \"Authorization: Bearer $NOTION_CONNECTOR_TOKEN\" -H \"Notion-Version: 2026-03-11\"",
+  "format": "json",
+  "content_path": "results",
+  "notes": "Keep the minimal user identity fields from the workspace user list while dropping extra user payload detail.",
+  "allow": [
+    "[].id",
+    "[].name",
+    "[].type"
+  ]
+}

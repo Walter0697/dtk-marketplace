@@ -1,0 +1,20 @@
+{
+  "id": "npm_package_packument",
+  "name": "npm_package_packument",
+  "source": "npm_registry",
+  "request": "curl -sS \"https://registry.npmjs.org/react\"",
+  "format": "json",
+  "notes": "Keep package identity, current tags, ownership, and links. Drop every historical version document, timestamps, users, and README.",
+  "allow": [
+    "name",
+    "description",
+    "dist-tags",
+    "license",
+    "keywords",
+    "maintainers[].name",
+    "maintainers[].email",
+    "repository",
+    "homepage",
+    "bugs"
+  ]
+}

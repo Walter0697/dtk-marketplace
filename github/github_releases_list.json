@@ -1,0 +1,9 @@
+{
+  "id": "github_releases_list",
+  "name": "github_releases_list",
+  "source": "github",
+  "request": "curl -sS \"https://api.github.com/repos/rust-lang/rust/releases?per_page=5\"",
+  "format": "json",
+  "notes": "Keep release identity, tag, status, author, timestamps, and download links. Drop release body and nested asset metadata.",
+  "allow": ["[].id", "[].name", "[].tag_name", "[].target_commitish", "[].html_url", "[].draft", "[].prerelease", "[].author.login", "[].created_at", "[].published_at", "[].tarball_url", "[].zipball_url", "[].assets[].id", "[].assets[].name", "[].assets[].content_type", "[].assets[].size", "[].assets[].download_count", "[].assets[].browser_download_url"]
+}

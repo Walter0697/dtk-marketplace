@@ -1,0 +1,15 @@
+{
+  "id": "notion_search_pat",
+  "name": "notion_search_pat",
+  "source": "notion",
+  "request": "curl -sS -X POST https://api.notion.com/v1/search -H \"Authorization: Bearer $NOTION_TOKEN\" -H \"Notion-Version: 2026-03-11\" -H \"Content-Type: application/json\" --data '{\"page_size\":3}'",
+  "notes": "Keep only the basic search hit identity fields needed to locate pages and databases.",
+  "format": "json",
+  "content_path": "results",
+  "allow": [
+    "[].object",
+    "[].id",
+    "[].url",
+    "[].parent"
+  ]
+}

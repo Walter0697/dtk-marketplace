@@ -1,0 +1,9 @@
+{
+  "id": "github_tags_list",
+  "name": "github_tags_list",
+  "source": "github",
+  "request": "curl -sS \"https://api.github.com/repos/rust-lang/rust/tags?per_page=5\"",
+  "format": "json",
+  "notes": "Keep tag name, commit SHA, and archive URLs.",
+  "allow": ["[].name", "[].commit.sha", "[].tarball_url", "[].zipball_url"]
+}

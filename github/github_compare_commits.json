@@ -1,0 +1,9 @@
+{
+  "id": "github_compare_commits",
+  "name": "github_compare_commits",
+  "source": "github",
+  "request": "curl -sS \"https://api.github.com/repos/rust-lang/rust/compare/<base>...<head>\"",
+  "format": "json",
+  "notes": "Keep comparison status/counts, commit summaries, and changed-file summaries. Drop signatures, patches, nested users, and duplicate URLs.",
+  "allow": ["status", "ahead_by", "behind_by", "total_commits", "html_url", "permalink_url", "base_commit.sha", "merge_base_commit.sha", "commits[].sha", "commits[].html_url", "commits[].commit.message", "commits[].commit.author.name", "commits[].commit.author.date", "commits[].commit.verification.verified", "commits[].author.login", "files[].sha", "files[].filename", "files[].status", "files[].additions", "files[].deletions", "files[].changes", "files[].blob_url"]
+}

@@ -1,0 +1,18 @@
+{
+  "id": "cloudflare_zone_detail",
+  "name": "cloudflare_zone_detail",
+  "source": "cloudflare",
+  "request": "curl -sS -H \"Authorization: Bearer $CLOUDFLARE_API_TOKEN\" \"https://api.cloudflare.com/client/v4/zones/968ebf1e0f84bbeb11be2b39af01c37d\"",
+  "format": "json",
+  "content_path": "result",
+  "notes": "Keep only the zone identity and account reference needed to inspect a single zone.",
+  "allow": [
+    "id",
+    "name",
+    "status",
+    "paused",
+    "type",
+    "account.id",
+    "account.name"
+  ]
+}

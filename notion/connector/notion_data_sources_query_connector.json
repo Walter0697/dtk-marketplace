@@ -1,0 +1,21 @@
+{
+  "id": "notion_data_sources_query_connector",
+  "name": "notion_data_sources_query_connector",
+  "source": "notion",
+  "request": "curl -sS -X POST https://api.notion.com/v1/data_sources/<data_source_id>/query -H \"Authorization: Bearer $NOTION_CONNECTOR_TOKEN\" -H \"Notion-Version: 2026-03-11\" -H \"Content-Type: application/json\" --data '{}'",
+  "format": "json",
+  "content_path": "results",
+  "notes": "Keep a compact query result surface for shared data sources while trimming the large property payloads.",
+  "allow": [
+    "[].object",
+    "[].id",
+    "[].created_time",
+    "[].last_edited_time",
+    "[].archived",
+    "[].url",
+    "[].parent",
+    "[].properties",
+    "[].icon",
+    "[].cover"
+  ]
+}

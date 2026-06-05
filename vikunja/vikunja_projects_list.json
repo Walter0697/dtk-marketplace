@@ -1,0 +1,18 @@
+{
+  "id": "vikunja_projects_list",
+  "name": "vikunja_projects_list",
+  "source": "vikunja",
+  "request": "curl -sS -H \"Authorization: Bearer $VIKUNJA_API_KEY\" \"${VIKUNJA_BASE_URL%/}/api/v1/projects\"",
+  "format": "json",
+  "notes": "Keep the stable project identity and archive fields needed to select a project by identifier.",
+  "allow": [
+    "[].id",
+    "[].title",
+    "[].identifier",
+    "[].parent_project_id",
+    "[].is_archived",
+    "[].position",
+    "[].updated",
+    "[].created"
+  ]
+}

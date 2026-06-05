@@ -1,0 +1,9 @@
+{
+  "id": "github_pull_files",
+  "name": "github_pull_files",
+  "source": "github",
+  "request": "curl -sS \"https://api.github.com/repos/rust-lang/rust/pulls/<number>/files?per_page=5\"",
+  "format": "json",
+  "notes": "Keep changed-file identity, status, counts, and blob/raw URLs. Drop patches and duplicate contents URLs.",
+  "allow": ["[].sha", "[].filename", "[].status", "[].additions", "[].deletions", "[].changes", "[].previous_filename", "[].blob_url", "[].raw_url"]
+}

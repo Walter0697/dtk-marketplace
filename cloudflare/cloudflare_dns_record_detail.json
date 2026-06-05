@@ -1,0 +1,16 @@
+{
+  "id": "cloudflare_dns_record_detail",
+  "name": "cloudflare_dns_record_detail",
+  "source": "cloudflare",
+  "request": "curl -sS -H \"Authorization: Bearer $CLOUDFLARE_API_TOKEN\" \"https://api.cloudflare.com/client/v4/zones/968ebf1e0f84bbeb11be2b39af01c37d/dns_records/4a954b3018ba799299d21f267270bf9b\"",
+  "format": "json",
+  "content_path": "result",
+  "notes": "Keep only the DNS record identity and routing fields needed to inspect a specific record.",
+  "allow": [
+    "id",
+    "name",
+    "type",
+    "content",
+    "proxied"
+  ]
+}

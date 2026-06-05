@@ -1,0 +1,10 @@
+{
+  "id": "github_git_tree",
+  "name": "github_git_tree",
+  "source": "github",
+  "request": "curl -sS \"https://api.github.com/repos/rust-lang/rust/git/trees/<sha>?recursive=1\"",
+  "format": "json",
+  "notes": "Keep recursive tree path, mode, type, SHA, and size. Drop one duplicate API URL per tree entry.",
+  "content_path": "tree",
+  "allow": ["[].path", "[].mode", "[].type", "[].sha", "[].size"]
+}

@@ -1,0 +1,26 @@
+{
+  "id": "cloudflare_dns_settings",
+  "name": "cloudflare_dns_settings",
+  "source": "cloudflare",
+  "request": "curl -sS -H \"Authorization: Bearer $CLOUDFLARE_API_TOKEN\" \"https://api.cloudflare.com/client/v4/zones/968ebf1e0f84bbeb11be2b39af01c37d/dns_settings\"",
+  "format": "json",
+  "content_path": "result",
+  "notes": "Keep the DNS configuration values needed to inspect zone-level DNS behavior.",
+  "allow": [
+    "nameservers.type",
+    "foundation_dns",
+    "multi_provider",
+    "secondary_overrides",
+    "soa.mname",
+    "soa.rname",
+    "soa.refresh",
+    "soa.retry",
+    "soa.expire",
+    "soa.min_ttl",
+    "soa.ttl",
+    "ns_ttl",
+    "zone_mode",
+    "internal_dns.reference_zone_id",
+    "flatten_all_cnames"
+  ]
+}

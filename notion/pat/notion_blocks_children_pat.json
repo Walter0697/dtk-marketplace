@@ -1,0 +1,23 @@
+{
+  "id": "notion_blocks_children_pat",
+  "name": "notion_blocks_children_pat",
+  "source": "notion",
+  "request": "curl -sS 'https://api.notion.com/v1/blocks/<block_id>/children?page_size=3' -H \"Authorization: Bearer $NOTION_TOKEN\" -H \"Notion-Version: 2026-03-11\"",
+  "notes": "Keep the block identity and the compact rich-text or table fields needed to recognize child blocks.",
+  "format": "json",
+  "content_path": "results",
+  "allow": [
+    "[].object",
+    "[].id",
+    "[].type",
+    "[].parent",
+    "[].has_children",
+    "[].table.table_width",
+    "[].table.has_column_header",
+    "[].table.has_row_header",
+    "[].child_page.title",
+    "[].paragraph.rich_text",
+    "[].to_do.rich_text",
+    "[].quote.rich_text"
+  ]
+}
