@@ -1,0 +1,437 @@
+{
+  "configs": [
+    {
+      "checksum": "d83d139bacaa0a7f9f0c7feabd62404d4b86a2750f12ecdeadbf773c7d2effc8",
+      "format": "json",
+      "id": "cloudflare_custom_hostnames_list",
+      "notes": "Keep the hostname identity and status fields needed to inspect custom hostname provisioning.",
+      "path": "cloudflare/cloudflare_custom_hostnames_list.json",
+      "source": "cloudflare"
+    },
+    {
+      "checksum": "a20eb2f50964acec5436c29ac1ae07df82007703ca1b71c8d8e2a72b277b15c6",
+      "format": "json",
+      "id": "cloudflare_dns_record_detail",
+      "notes": "Keep only the DNS record identity and routing fields needed to inspect a specific record.",
+      "path": "cloudflare/cloudflare_dns_record_detail.json",
+      "source": "cloudflare"
+    },
+    {
+      "checksum": "f1637559296411dea99939ad04b53fe63c54141a1ff44634a81998a0e4a7b5e6",
+      "format": "json",
+      "id": "cloudflare_dns_records_list",
+      "notes": "Keep only the DNS record identity and routing fields needed to distinguish records.",
+      "path": "cloudflare/cloudflare_dns_records_list.json",
+      "source": "cloudflare"
+    },
+    {
+      "checksum": "e5a6b9daf2060820222e73e220a6f5ad8b197a569c44d2edf253659299b0d480",
+      "format": "json",
+      "id": "cloudflare_dns_settings",
+      "notes": "Keep the DNS configuration values needed to inspect zone-level DNS behavior.",
+      "path": "cloudflare/cloudflare_dns_settings.json",
+      "source": "cloudflare"
+    },
+    {
+      "checksum": "f636f920b19cdb62492d90e35c1b8bb9757cb3c09c5ec5c24f0d76d5cfcfecdd",
+      "format": "json",
+      "id": "cloudflare_zone_detail",
+      "notes": "Keep only the zone identity and account reference needed to inspect a single zone.",
+      "path": "cloudflare/cloudflare_zone_detail.json",
+      "source": "cloudflare"
+    },
+    {
+      "checksum": "f7691a4c379be3f73b3d93a50fa8bf03a41848a3228923a48317ed26f2b27fd5",
+      "format": "json",
+      "id": "cloudflare_zone_settings_list",
+      "notes": "Keep the zone setting identity and editable/value fields while trimming the noisy metadata envelope.",
+      "path": "cloudflare/cloudflare_zone_settings_list.json",
+      "source": "cloudflare"
+    },
+    {
+      "checksum": "71f2abec8944f2639b6aa1e41df6da0b9fde25e07b3463692198741107ace1e4",
+      "format": "json",
+      "id": "cloudflare_zones_list",
+      "notes": "Keep only the zone identity and read-scope fields needed to choose a zone.",
+      "path": "cloudflare/cloudflare_zones_list.json",
+      "source": "cloudflare"
+    },
+    {
+      "checksum": "af37784e44b39492afefbe5867d23d32af30b52e060a5b5755533c3e384fb5ab",
+      "format": "json",
+      "id": "github_actions_runs",
+      "notes": "Keep workflow run identity, trigger, branch/SHA, status, attempt, actors, timestamps, and web URL. Drop nested repositories and action API URLs.",
+      "path": "github/github_actions_runs.json",
+      "source": "github"
+    },
+    {
+      "checksum": "e6675d272210b65618b8c574eb46987ea24c3d89968214084bb6b22399030b68",
+      "format": "json",
+      "id": "github_branches_list",
+      "notes": "Keep branch name, commit SHA, and protection state.",
+      "path": "github/github_branches_list.json",
+      "source": "github"
+    },
+    {
+      "checksum": "edd74ccf6011fd02438286239f002ed07563a53fbd76a0ed1bc5ee635f68a168",
+      "format": "json",
+      "id": "github_commit_detail",
+      "notes": "Keep commit identity, message, authorship, verification result, stats, changed-file summaries, and web URL. Drop patches and duplicate API URLs.",
+      "path": "github/github_commit_detail.json",
+      "source": "github"
+    },
+    {
+      "checksum": "9059c7a5599613d24fd620a784e48d73cdb9e19eb10dee7d158e08422f092a21",
+      "format": "json",
+      "id": "github_commits_list",
+      "notes": "Keep commit identity, message, authorship, verification, and web URL.",
+      "path": "github/github_commits_list.json",
+      "source": "github"
+    },
+    {
+      "checksum": "3a77765f7d202a1556d0ba760c0af08de4708e1243a8c8a80e1a2976a56af896",
+      "format": "json",
+      "id": "github_compare_commits",
+      "notes": "Keep comparison status/counts, commit summaries, and changed-file summaries. Drop signatures, patches, nested users, and duplicate URLs.",
+      "path": "github/github_compare_commits.json",
+      "source": "github"
+    },
+    {
+      "checksum": "800cab96f5ee62ad234dc51d51abfed8c7d88726dddc2c68e935681ba2262691",
+      "format": "json",
+      "id": "github_contributors_list",
+      "notes": "Keep contributor identity, profile URL, type, and contribution count.",
+      "path": "github/github_contributors_list.json",
+      "source": "github"
+    },
+    {
+      "checksum": "0aebab83ca9d01a0aa12847d349ba1815f4bbc023896ac689bdf1ca37f6e609a",
+      "format": "json",
+      "id": "github_events_list",
+      "notes": "Keep public event identity, actor, repository, time, and common action/reference fields.",
+      "path": "github/github_events_list.json",
+      "source": "github"
+    },
+    {
+      "checksum": "4f363f9a54ab1df29fe077d8cd85f67f8e82e3b03f8ea95e5613839df61b8b68",
+      "format": "json",
+      "id": "github_git_tree",
+      "notes": "Keep recursive tree path, mode, type, SHA, and size. Drop one duplicate API URL per tree entry.",
+      "path": "github/github_git_tree.json",
+      "source": "github"
+    },
+    {
+      "checksum": "af0885de2e93197feac6cab00f6164c9adc9eeb555c9aa68501b4ef1c37acaeb",
+      "format": "json",
+      "id": "github_issue_timeline",
+      "notes": "Keep issue timeline event identity, type, actor, time, labels, commit/reference, and common assignment/review fields.",
+      "path": "github/github_issue_timeline.json",
+      "source": "github"
+    },
+    {
+      "checksum": "8048cd90314bd292c0e6b55a149b87fd90d459146436a8b362412679cc962ce7",
+      "format": "json",
+      "id": "github_issues_list",
+      "notes": "Keep issue/PR identity, state, labels, assignees, comment count, timestamps, and web URL. Drop list-result body and nested URL metadata.",
+      "path": "github/github_issues_list.json",
+      "source": "github"
+    },
+    {
+      "checksum": "100e8b04c6605076f7cee6f71d3885114de96c439065d8f80063b41936bc5585",
+      "format": "json",
+      "id": "github_pull_files",
+      "notes": "Keep changed-file identity, status, counts, and blob/raw URLs. Drop patches and duplicate contents URLs.",
+      "path": "github/github_pull_files.json",
+      "source": "github"
+    },
+    {
+      "checksum": "a4b639ed07af15c053f938f0a6dda1367db73b0dfe0a012a70ca2dd96d236b4e",
+      "format": "json",
+      "id": "github_pulls_list",
+      "notes": "Keep pull request identity, state, branches, reviewers, labels, merge status, timestamps, and web URL.",
+      "path": "github/github_pulls_list.json",
+      "source": "github"
+    },
+    {
+      "checksum": "288c936c26d0c9af9849592a006626a7ddfa6ab8d6047ef1052807d7fc935f5c",
+      "format": "json",
+      "id": "github_releases_list",
+      "notes": "Keep release identity, tag, status, author, timestamps, and download links. Drop release body and nested asset metadata.",
+      "path": "github/github_releases_list.json",
+      "source": "github"
+    },
+    {
+      "checksum": "a596dcaedce95997d217b08fe960fdf60c741b34bc0662c1b7dfaa28dc115741",
+      "format": "json",
+      "id": "github_repository_detail",
+      "notes": "Keep repository identity, status, popularity, language, license, timestamps, and primary URLs.",
+      "path": "github/github_repository_detail.json",
+      "source": "github"
+    },
+    {
+      "checksum": "87a9e7cdbb3165f3a3cbc28828ac82b3fe7d910119e2ff42a48808da15a84528",
+      "format": "json",
+      "id": "github_search_issues",
+      "notes": "Keep issue/PR search identity, state, labels, assignees, comments, score, timestamps, and web URL.",
+      "path": "github/github_search_issues.json",
+      "source": "github"
+    },
+    {
+      "checksum": "cb8f7cd04c0a569d64a56251f0ddf476be5090d493b85758f26ae52f4ee07002",
+      "format": "json",
+      "id": "github_search_repositories",
+      "notes": "Keep repository search identity, status, popularity, language, license, topics, timestamps, and web URL.",
+      "path": "github/github_search_repositories.json",
+      "source": "github"
+    },
+    {
+      "checksum": "2e0c6f27f393a306cf1b8dad10d8754d1b883e7ba55547cf755c07905451357c",
+      "format": "json",
+      "id": "github_tags_list",
+      "notes": "Keep tag name, commit SHA, and archive URLs.",
+      "path": "github/github_tags_list.json",
+      "source": "github"
+    },
+    {
+      "checksum": "760b02b66efc235656e29e446ed29cb589ed53680ee8f3064ea195d13dd1ab1f",
+      "format": "json",
+      "id": "github_user_detail",
+      "notes": "Keep public user identity, profile, counts, and timestamps.",
+      "path": "github/github_user_detail.json",
+      "source": "github"
+    },
+    {
+      "checksum": "daee4ebaa966288b36892d57b5458f17b69a03520a77d62699ff8e1fe2d03db3",
+      "format": "json",
+      "id": "github_user_or_org_detail",
+      "notes": "Keep public user/organization identity, profile, counts, verification, and timestamps.",
+      "path": "github/github_user_or_org_detail.json",
+      "source": "github"
+    },
+    {
+      "checksum": "affdcbd2ba203b338d2425273595b41d3a75f6bf369154e959dc0d5db4c4f764",
+      "format": "json",
+      "id": "hackernews_algolia_item_root",
+      "notes": "Compact HN Algolia item endpoint. Keep the root story/comment fields and drop the nested comment tree; retrieve original when full comments are needed.",
+      "path": "hackernews/hackernews_algolia_item_root.json",
+      "source": "hackernews_algolia"
+    },
+    {
+      "checksum": "93ab439fbb507cf2ed262d1ff563079396a85434b9e252640824798d9010fe14",
+      "format": "json",
+      "id": "hackernews_algolia_search",
+      "notes": "Compact HN Algolia search/search_by_date result pages. Drop highlight markup, child ID lists, raw tags, and timing internals.",
+      "path": "hackernews/hackernews_algolia_search.json",
+      "source": "hackernews_algolia"
+    },
+    {
+      "checksum": "39a9837fb5b03a869a0ca7c86919f1aed250d0952af70a42665df5719e4243e3",
+      "format": "json",
+      "id": "hackernews_item_detail",
+      "notes": "Keep the fields needed to identify and reason about Hacker News stories, comments, jobs, polls, and poll options.",
+      "path": "hackernews/hackernews_item_detail.json",
+      "source": "hackernews"
+    },
+    {
+      "checksum": "3c3428c63a2613d94546364cd6b2d97b56f6428a978ff96d352382dedd88c740",
+      "format": "json",
+      "id": "hackernews_user_profile",
+      "notes": "Keep user identity/profile fields and omit the submitted ID history, which can be very large and recoverable by ref_id.",
+      "path": "hackernews/hackernews_user_profile.json",
+      "source": "hackernews"
+    },
+    {
+      "checksum": "0305d422544f63fb5d16360e83fedfcaaf49e1c81c1d8a84c4080dd3b4ba9d80",
+      "format": "json",
+      "id": "n8n_workflow_detail",
+      "notes": "Keep workflow metadata plus a compact structural view of the nodes and wiring, while trimming the large nested parameter payloads in the active draft snapshot.",
+      "path": "n8n/n8n_workflow_detail.json",
+      "source": "n8n"
+    },
+    {
+      "checksum": "d87cac42798d2ae03155066e6e36a758101351cefede9cb85217af69afb0b330",
+      "format": "json",
+      "id": "n8n_workflows_list",
+      "notes": "Keep the compact workflow list fields needed for browsing and status checks, while dropping the full workflow graph payload.",
+      "path": "n8n/n8n_workflows_list.json",
+      "source": "n8n"
+    },
+    {
+      "checksum": "2b8264aa04cf9c2a61f2182c063dcbfa4c31441e1b4b6f83d7826677825bb383",
+      "format": "json",
+      "id": "notion_blocks_children_connector",
+      "notes": "Keep the block identity and the compact rich-text or table fields needed to recognize child blocks.",
+      "path": "notion/connector/notion_blocks_children_connector.json",
+      "source": "notion"
+    },
+    {
+      "checksum": "3143f1d92c6171a072185092f0010b6c91a9906057d9e8a553d02054a5c3f902",
+      "format": "json",
+      "id": "notion_data_sources_query_connector",
+      "notes": "Keep a compact query result surface for shared data sources while trimming the large property payloads.",
+      "path": "notion/connector/notion_data_sources_query_connector.json",
+      "source": "notion"
+    },
+    {
+      "checksum": "94b4c3461d07d862c1b1a18edef642b8cfd99aaa69330779c6ca18c88ec25cf2",
+      "format": "json",
+      "id": "notion_databases_retrieve_connector",
+      "notes": "Keep only the database identity, title text, and data source ids needed to recognize the shared database.",
+      "path": "notion/connector/notion_databases_retrieve_connector.json",
+      "source": "notion"
+    },
+    {
+      "checksum": "3152f68e6490ee743fb99cfb935e9cba32827c48da69a742dd7f2542de236e92",
+      "format": "json",
+      "id": "notion_pages_retrieve_connector",
+      "notes": "Keep only the identifiers and title text needed to recognize a shared page retrieve.",
+      "path": "notion/connector/notion_pages_retrieve_connector.json",
+      "source": "notion"
+    },
+    {
+      "checksum": "5d7f15604eb56fcb01381f09a8b18ff4f6fa1aad4ad9a9b436217ca90c23d5a9",
+      "format": "json",
+      "id": "notion_search_connector",
+      "notes": "Keep only the basic search hit identity fields needed to locate pages and databases.",
+      "path": "notion/connector/notion_search_connector.json",
+      "source": "notion"
+    },
+    {
+      "checksum": "6d46a14c837a7169f8082888b50d2b93b42c8eb49dd2b5bfed0c9e3d67929152",
+      "format": "json",
+      "id": "notion_users_list_connector",
+      "notes": "Keep the minimal user identity fields from the workspace user list while dropping extra user payload detail.",
+      "path": "notion/connector/notion_users_list_connector.json",
+      "source": "notion"
+    },
+    {
+      "checksum": "e356dfd56699ae18ae1f98e0af8d082c2591c6a3cdb94f0c98b9de39589d103c",
+      "format": "json",
+      "id": "notion_blocks_children_pat",
+      "notes": "Keep the block identity and the compact rich-text or table fields needed to recognize child blocks.",
+      "path": "notion/pat/notion_blocks_children_pat.json",
+      "source": "notion"
+    },
+    {
+      "checksum": "3b3acee8f0d2edb1d059f064f401f55aae29684ef6c6c034c6212ed5f910b6c2",
+      "format": "json",
+      "id": "notion_data_sources_query_pat",
+      "notes": "Keep a compact query result surface for shared data sources while trimming the large property payloads.",
+      "path": "notion/pat/notion_data_sources_query_pat.json",
+      "source": "notion"
+    },
+    {
+      "checksum": "fcef49894fea96728f3af7ef2156b01644a63e3caa3d003ed9659252a6f78b6d",
+      "format": "json",
+      "id": "notion_databases_retrieve_pat",
+      "notes": "Keep only the database identity, title text, and data source ids needed to recognize the shared database.",
+      "path": "notion/pat/notion_databases_retrieve_pat.json",
+      "source": "notion"
+    },
+    {
+      "checksum": "48c6626291bb97a8ec65b49679b21118b561e293f6bb2391176098e3917a0a49",
+      "format": "json",
+      "id": "notion_pages_retrieve_pat",
+      "notes": "Keep only the identifiers and title text needed to recognize a shared page retrieve.",
+      "path": "notion/pat/notion_pages_retrieve_pat.json",
+      "source": "notion"
+    },
+    {
+      "checksum": "8d1e8ac037c8d8b9ab721b917938e1a6a94cf12fcfc49bd0f43c5613f3621afd",
+      "format": "json",
+      "id": "notion_search_pat",
+      "notes": "Keep only the basic search hit identity fields needed to locate pages and databases.",
+      "path": "notion/pat/notion_search_pat.json",
+      "source": "notion"
+    },
+    {
+      "checksum": "148df629e9ca331cb3881e130d90b4255b432ace6a234b19c8577320de62031c",
+      "format": "json",
+      "id": "notion_users_me_pat",
+      "notes": "Keep the current user or bot identity and workspace metadata for PAT-authenticated Notion calls.",
+      "path": "notion/pat/notion_users_me_pat.json",
+      "source": "notion"
+    },
+    {
+      "checksum": "6b9e81e2469207e499e34283b8309c3ae1a3288b2dbaf89eb99eb9cc4a167309",
+      "format": "json",
+      "id": "npm_package_packument",
+      "notes": "Keep package identity, current tags, ownership, and links. Drop every historical version document, timestamps, users, and README.",
+      "path": "npm-registry/npm_package_packument.json",
+      "source": "npm_registry"
+    },
+    {
+      "checksum": "b08ce6993d0e25d6333e22cf66dae4f1dcd9e5bfab67bd23a835bced304c10c0",
+      "format": "json",
+      "id": "npm_package_search",
+      "notes": "Keep package identity, popularity, quality, maintenance, and links from npm search results. Drop publisher emails, maintainers, flags, and redundant scoring fields.",
+      "path": "npm-registry/npm_package_search.json",
+      "source": "npm_registry"
+    },
+    {
+      "checksum": "b6cdc5ab46d17a8693642ec436268ba8c59454fea01fa9d4a51326ac5f3bf88e",
+      "format": "json",
+      "id": "usgs_earthquake_collection",
+      "notes": "Keep earthquake identity, location, magnitude, timing, severity, status, and quality fields from catalog queries and summary feeds.",
+      "path": "usgs-earthquakes/usgs_earthquake_collection.json",
+      "source": "usgs_earthquake"
+    },
+    {
+      "checksum": "28271881261049e2571d48805706936d2d471bd0b2e343f779aecdb8da70917c",
+      "format": "json",
+      "id": "usgs_earthquake_event_detail",
+      "notes": "Keep event identity, location, magnitude, severity, status, quality, and links. Drop large technical product documents recoverable through DTK.",
+      "path": "usgs-earthquakes/usgs_earthquake_event_detail.json",
+      "source": "usgs_earthquake"
+    },
+    {
+      "checksum": "8443c0e95a5f4d7e02ac3876359d6f58159d2cce6dddf6fe80fc61b9bbc6570b",
+      "format": "json",
+      "id": "usgs_earthquake_query",
+      "notes": "Keep earthquake identity, location, magnitude, timing, severity, status, and quality fields from catalog queries.",
+      "path": "usgs-earthquakes/usgs_earthquake_query.json",
+      "source": "usgs_earthquake"
+    },
+    {
+      "checksum": "a3a24172ffc6fda369cb806a6bbee72d99b6164a775298efee3d2a8c6d0cfc63",
+      "format": "json",
+      "id": "vikunja_project_detail",
+      "notes": "Keep the project summary and view metadata needed to resolve the kanban view and bucket IDs.",
+      "path": "vikunja/vikunja_project_detail.json",
+      "source": "vikunja"
+    },
+    {
+      "checksum": "fb16c896035bcb6980bab7774f7c2d9323bcbcbc3199c0bfe99b39f22f88c050",
+      "format": "json",
+      "id": "vikunja_project_kanban_buckets",
+      "notes": "Keep the bucket identity and ordering fields used to map Proposed/Doing/Done.",
+      "path": "vikunja/vikunja_project_kanban_buckets.json",
+      "source": "vikunja"
+    },
+    {
+      "checksum": "2da2d7f7103bad42526cd76441edd7f5d18851439593bf8d4d89bd6543bf44e4",
+      "format": "json",
+      "id": "vikunja_project_kanban_tasks",
+      "notes": "Keep the bucket headers plus a compact task surface for kanban task lookup and status inspection.",
+      "path": "vikunja/vikunja_project_kanban_tasks.json",
+      "source": "vikunja"
+    },
+    {
+      "checksum": "1059883f0bd955dfa7be4a065a805db6e3294fb9fac6778efb40ac25ed48d031",
+      "format": "json",
+      "id": "vikunja_project_tasks_page",
+      "notes": "Keep the compact flat task fields used for pagination fallback and task lookup by identifier or index.",
+      "path": "vikunja/vikunja_project_tasks_page.json",
+      "source": "vikunja"
+    },
+    {
+      "checksum": "1703e4b7dee81c597534b51de8e6974d723a673919d37064cd3e4d3e5527c2d1",
+      "format": "json",
+      "id": "vikunja_projects_list",
+      "notes": "Keep the stable project identity and archive fields needed to select a project by identifier.",
+      "path": "vikunja/vikunja_projects_list.json",
+      "source": "vikunja"
+    }
+  ],
+  "schema_version": 1
+}

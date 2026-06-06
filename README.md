@@ -16,6 +16,16 @@ This repository is intended to act like a plugin catalog for DTK. The goal is to
 
 Each config is a JSON file that describes the source, request, and allowlist for a reusable DTK filter.
 
+## Validation
+
+Every pull request validates config structure, checks for literal credentials, verifies the generated
+`marketplace-index.json`, and scans the repository history with Gitleaks.
+
+```bash
+python3 scripts/validate_marketplace.py
+python3 scripts/validate_marketplace.py --check
+```
+
 ## Contributing
 
 See [`CONTRIBUTING.md`](CONTRIBUTING.md) for the PR-based workflow.
