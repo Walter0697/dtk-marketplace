@@ -10,6 +10,12 @@ Contributions to this repository must arrive through pull requests, matching the
 4. Validate the config shape and naming before opening a PR.
 5. Open a pull request for review.
 
+Run the same validation used by CI:
+
+```bash
+python3 scripts/validate_marketplace.py
+```
+
 ## Layout
 
 - Category folders live at the repository root, for example `n8n/`.
@@ -21,6 +27,8 @@ Contributions to this repository must arrive through pull requests, matching the
 - Prefer reusable list or detail views over one-off payload slices.
 - Keep the `allow` surface focused on the fields that matter for the use case.
 - Include a short `notes` field when the intent is not obvious from the file name.
+- Keep credentials in environment variables such as `$NOTION_TOKEN`; never include literal tokens,
+  passwords, cookies, private keys, or authenticated URLs.
 
 ## Pull requests
 
