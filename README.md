@@ -18,12 +18,11 @@ Each config is a JSON file that describes the source, request, and allowlist for
 
 ## Validation
 
-Every pull request validates config structure, checks for literal credentials, verifies the generated
-`marketplace-index.json`, and scans the repository history with Gitleaks.
+Every pull request validates config structure, checks for literal credentials, and scans the
+repository history with Gitleaks. Contributors only need to add or edit config JSON files.
 
 ```bash
 python3 scripts/validate_marketplace.py
-python3 scripts/validate_marketplace.py --check
 ```
 
 ## Contributing

@@ -1,18 +1,14 @@
 #!/usr/bin/env python3
-"""Validate DTK marketplace configs and generate the deterministic index."""
+"""Validate DTK marketplace configs."""
 
 from __future__ import annotations
 
-import argparse
-import hashlib
 import json
 import re
 import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-INDEX_PATH = ROOT / "marketplace-index.json"
-SKIPPED_NAMES = {"marketplace-index.json"}
 
 SENSITIVE_HEADER = re.compile(
     r"(?i)(authorization|x-api-key|api-key|x-auth-token|cookie)\s*:\s*([^\"'\s]+(?:\s+[^\"'\s]+)?)"
@@ -29,7 +25,7 @@ def config_paths() -> list[Path]:
     return sorted(
         path
         for path in ROOT.rglob("*.json")
-        if path.name not in SKIPPED_NAMES and ".git" not in path.parts
+        if ".git" not in path.parts
     )
 
 
@@ -56,12 +52,13 @@ def validate_request(path: Path, request: str, errors: list[str]) -> None:
             )
 
 
-def validate_and_index() -> tuple[list[str], dict[str, object]]:
+def validate_configs() -> tuple[list[str], int]:
     errors: list[str] = []
-    entries: list[dict[str, object]] = []
     seen_ids: dict[str, Path] = {}
+    count = 0
 
     for path in config_paths():
+        count += 1
         relative = path.relative_to(ROOT).as_posix()
         if len(path.relative_to(ROOT).parts) < 2:
             errors.append(f"{relative}: configs must live inside a category folder")
@@ -104,50 +101,16 @@ def validate_and_index() -> tuple[list[str], dict[str, object]]:
         if "notes" in config and not isinstance(config["notes"], str):
             errors.append(f"{relative}: notes must be a string")
 
-        entries.append(
-            {
-                "path": relative,
-                "id": config_id,
-                "source": source,
-                "format": config.get("format", "auto"),
-                "notes": config.get("notes"),
-                "checksum": hashlib.sha256(raw).hexdigest(),
-            }
-        )
-
-    return errors, {"schema_version": 1, "configs": entries}
-
-
-def rendered_index(index: dict[str, object]) -> str:
-    return json.dumps(index, indent=2, sort_keys=True) + "\n"
+    return errors, count
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser()
-    parser.add_argument(
-        "--check",
-        action="store_true",
-        help="fail when marketplace-index.json is not current",
-    )
-    args = parser.parse_args()
-
-    errors, index = validate_and_index()
+    errors, count = validate_configs()
     if errors:
         print("\n".join(errors), file=sys.stderr)
         return 1
 
-    rendered = rendered_index(index)
-    if args.check:
-        if not INDEX_PATH.exists() or INDEX_PATH.read_text() != rendered:
-            print(
-                "marketplace-index.json is stale; run scripts/validate_marketplace.py",
-                file=sys.stderr,
-            )
-            return 1
-    else:
-        INDEX_PATH.write_text(rendered)
-
-    print(f"validated {len(index['configs'])} marketplace configs")
+    print(f"validated {count} marketplace configs")
     return 0
 
 

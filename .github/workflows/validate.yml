@@ -14,8 +14,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Validate configs and generated index
-        run: python3 scripts/validate_marketplace.py --check
+      - name: Validate configs
+        run: python3 scripts/validate_marketplace.py
 
   secrets:
     runs-on: ubuntu-latest
