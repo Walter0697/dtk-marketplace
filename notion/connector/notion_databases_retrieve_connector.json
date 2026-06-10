@@ -12,5 +12,12 @@
     "data_sources[].id",
     "parent",
     "url"
-  ]
+  ],
+  "hook_rule": {
+    "command_prefix": "curl",
+    "command_contains": [
+      "api.notion.com/v1/databases/",
+      "$NOTION_CONNECTOR_TOKEN"
+    ]
+  }
 }

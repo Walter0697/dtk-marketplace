@@ -17,5 +17,12 @@
     "[].properties",
     "[].icon",
     "[].cover"
-  ]
+  ],
+  "hook_rule": {
+    "command_prefix": "curl",
+    "command_contains": [
+      "api.notion.com/v1/data_sources/",
+      "$NOTION_CONNECTOR_TOKEN"
+    ]
+  }
 }

@@ -10,5 +10,11 @@
     "created",
     "karma",
     "about"
-  ]
+  ],
+  "hook_rule": {
+    "command_prefix": "curl",
+    "command_contains": [
+      "hacker-news.firebaseio.com/v0/user/"
+    ]
+  }
 }

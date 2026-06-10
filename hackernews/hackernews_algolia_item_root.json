@@ -16,5 +16,11 @@
     "created_at",
     "created_at_i",
     "text"
-  ]
+  ],
+  "hook_rule": {
+    "command_prefix": "curl",
+    "command_contains": [
+      "hn.algolia.com/api/v1/items/"
+    ]
+  }
 }

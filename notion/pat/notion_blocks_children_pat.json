@@ -19,5 +19,13 @@
     "[].paragraph.rich_text",
     "[].to_do.rich_text",
     "[].quote.rich_text"
-  ]
+  ],
+  "hook_rule": {
+    "command_prefix": "curl",
+    "command_contains": [
+      "api.notion.com/v1/blocks/",
+      "/children",
+      "$NOTION_TOKEN"
+    ]
+  }
 }

@@ -11,5 +11,12 @@
     "[].id",
     "[].url",
     "[].parent"
-  ]
+  ],
+  "hook_rule": {
+    "command_prefix": "curl",
+    "command_contains": [
+      "api.notion.com/v1/search",
+      "$NOTION_CONNECTOR_TOKEN"
+    ]
+  }
 }

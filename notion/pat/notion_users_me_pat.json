@@ -11,5 +11,12 @@
     "type",
     "bot.workspace_name",
     "bot.workspace_id"
-  ]
+  ],
+  "hook_rule": {
+    "command_prefix": "curl",
+    "command_contains": [
+      "api.notion.com/v1/users/me",
+      "$NOTION_TOKEN"
+    ]
+  }
 }

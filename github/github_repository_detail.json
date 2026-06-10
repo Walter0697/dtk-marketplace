@@ -5,5 +5,35 @@
   "request": "curl -sS \"https://api.github.com/repos/rust-lang/rust\"",
   "format": "json",
   "notes": "Keep repository identity, status, popularity, language, license, timestamps, and primary URLs.",
-  "allow": ["id", "full_name", "description", "html_url", "homepage", "private", "fork", "archived", "disabled", "visibility", "default_branch", "language", "license.spdx_id", "topics", "stargazers_count", "watchers_count", "forks_count", "open_issues_count", "subscribers_count", "size", "created_at", "updated_at", "pushed_at"]
+  "allow": [
+    "id",
+    "full_name",
+    "description",
+    "html_url",
+    "homepage",
+    "private",
+    "fork",
+    "archived",
+    "disabled",
+    "visibility",
+    "default_branch",
+    "language",
+    "license.spdx_id",
+    "topics",
+    "stargazers_count",
+    "watchers_count",
+    "forks_count",
+    "open_issues_count",
+    "subscribers_count",
+    "size",
+    "created_at",
+    "updated_at",
+    "pushed_at"
+  ],
+  "hook_rule": {
+    "command_prefix": "curl",
+    "command_contains": [
+      "api.github.com/repos/"
+    ]
+  }
 }

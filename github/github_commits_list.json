@@ -5,5 +5,25 @@
   "request": "curl -sS \"https://api.github.com/repos/rust-lang/rust/commits?per_page=5\"",
   "format": "json",
   "notes": "Keep commit identity, message, authorship, verification, and web URL.",
-  "allow": ["[].sha", "[].html_url", "[].commit.message", "[].commit.author.name", "[].commit.author.email", "[].commit.author.date", "[].commit.committer.name", "[].commit.committer.date", "[].commit.verification.verified", "[].commit.verification.reason", "[].author.login", "[].committer.login"]
+  "allow": [
+    "[].sha",
+    "[].html_url",
+    "[].commit.message",
+    "[].commit.author.name",
+    "[].commit.author.email",
+    "[].commit.author.date",
+    "[].commit.committer.name",
+    "[].commit.committer.date",
+    "[].commit.verification.verified",
+    "[].commit.verification.reason",
+    "[].author.login",
+    "[].committer.login"
+  ],
+  "hook_rule": {
+    "command_prefix": "curl",
+    "command_contains": [
+      "api.github.com/repos/",
+      "/commits?"
+    ]
+  }
 }

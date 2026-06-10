@@ -14,5 +14,12 @@
     "[].position",
     "[].updated",
     "[].created"
-  ]
+  ],
+  "hook_rule": {
+    "command_prefix": "curl",
+    "command_contains": [
+      "/api/v1/projects",
+      "$VIKUNJA_API_KEY"
+    ]
+  }
 }

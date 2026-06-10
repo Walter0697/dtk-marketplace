@@ -12,5 +12,12 @@
     "type",
     "content",
     "proxied"
-  ]
+  ],
+  "hook_rule": {
+    "command_prefix": "curl",
+    "command_contains": [
+      "api.cloudflare.com/client/v4/zones/",
+      "/dns_records/"
+    ]
+  }
 }

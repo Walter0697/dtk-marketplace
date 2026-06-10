@@ -7,6 +7,33 @@
   "notes": "Keep earthquake identity, location, magnitude, timing, severity, status, and quality fields from catalog queries.",
   "content_path": "features",
   "allow": [
-    "[].id", "[].properties.title", "[].properties.mag", "[].properties.magType", "[].properties.place", "[].properties.time", "[].properties.updated", "[].properties.type", "[].properties.status", "[].properties.alert", "[].properties.tsunami", "[].properties.felt", "[].properties.cdi", "[].properties.mmi", "[].properties.sig", "[].properties.nst", "[].properties.dmin", "[].properties.rms", "[].properties.gap", "[].properties.url", "[].geometry.coordinates"
-  ]
+    "[].id",
+    "[].properties.title",
+    "[].properties.mag",
+    "[].properties.magType",
+    "[].properties.place",
+    "[].properties.time",
+    "[].properties.updated",
+    "[].properties.type",
+    "[].properties.status",
+    "[].properties.alert",
+    "[].properties.tsunami",
+    "[].properties.felt",
+    "[].properties.cdi",
+    "[].properties.mmi",
+    "[].properties.sig",
+    "[].properties.nst",
+    "[].properties.dmin",
+    "[].properties.rms",
+    "[].properties.gap",
+    "[].properties.url",
+    "[].geometry.coordinates"
+  ],
+  "hook_rule": {
+    "command_prefix": "curl",
+    "command_contains": [
+      "earthquake.usgs.gov",
+      "orderby"
+    ]
+  }
 }

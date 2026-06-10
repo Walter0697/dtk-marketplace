@@ -10,5 +10,12 @@
     "[].id",
     "[].name",
     "[].type"
-  ]
+  ],
+  "hook_rule": {
+    "command_prefix": "curl",
+    "command_contains": [
+      "api.notion.com/v1/users",
+      "$NOTION_CONNECTOR_TOKEN"
+    ]
+  }
 }

@@ -12,5 +12,12 @@
     "properties.title.id",
     "properties.title.type",
     "properties.title.title[].plain_text"
-  ]
+  ],
+  "hook_rule": {
+    "command_prefix": "curl",
+    "command_contains": [
+      "api.notion.com/v1/pages/",
+      "$NOTION_CONNECTOR_TOKEN"
+    ]
+  }
 }

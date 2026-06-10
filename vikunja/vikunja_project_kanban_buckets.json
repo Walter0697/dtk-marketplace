@@ -11,5 +11,13 @@
     "[].project_view_id",
     "[].position",
     "[].count"
-  ]
+  ],
+  "hook_rule": {
+    "command_prefix": "curl",
+    "command_contains": [
+      "/api/v1/projects/",
+      "/views/",
+      "/buckets"
+    ]
+  }
 }

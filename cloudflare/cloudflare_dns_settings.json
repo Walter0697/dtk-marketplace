@@ -22,5 +22,12 @@
     "zone_mode",
     "internal_dns.reference_zone_id",
     "flatten_all_cnames"
-  ]
+  ],
+  "hook_rule": {
+    "command_prefix": "curl",
+    "command_contains": [
+      "api.cloudflare.com/client/v4/zones/",
+      "/dns_settings"
+    ]
+  }
 }

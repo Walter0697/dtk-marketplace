@@ -5,5 +5,17 @@
   "request": "curl -sS \"https://api.github.com/repos/rust-lang/rust/tags?per_page=5\"",
   "format": "json",
   "notes": "Keep tag name, commit SHA, and archive URLs.",
-  "allow": ["[].name", "[].commit.sha", "[].tarball_url", "[].zipball_url"]
+  "allow": [
+    "[].name",
+    "[].commit.sha",
+    "[].tarball_url",
+    "[].zipball_url"
+  ],
+  "hook_rule": {
+    "command_prefix": "curl",
+    "command_contains": [
+      "api.github.com/repos/",
+      "/tags"
+    ]
+  }
 }
