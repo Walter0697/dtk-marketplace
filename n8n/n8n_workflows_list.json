@@ -12,5 +12,12 @@
     "[].active",
     "[].isArchived",
     "[].updatedAt"
-  ]
+  ],
+  "hook_rule": {
+    "command_prefix": "curl",
+    "command_contains": [
+      "/api/v1/workflows",
+      "$N8N_API_TOKEN"
+    ]
+  }
 }

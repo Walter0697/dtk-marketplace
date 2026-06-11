@@ -50,5 +50,12 @@
     "activeVersion.nodes[].position",
     "activeVersion.nodes[].parameters",
     "activeVersion.connections"
-  ]
+  ],
+  "hook_rule": {
+    "command_prefix": "curl",
+    "command_contains": [
+      "/api/v1/workflows/",
+      "$N8N_API_TOKEN"
+    ]
+  }
 }

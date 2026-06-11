@@ -6,5 +6,35 @@
   "format": "json",
   "notes": "Keep workflow run identity, trigger, branch/SHA, status, attempt, actors, timestamps, and web URL. Drop nested repositories and action API URLs.",
   "content_path": "workflow_runs",
-  "allow": ["[].id", "[].name", "[].display_title", "[].html_url", "[].head_branch", "[].head_sha", "[].path", "[].run_number", "[].run_attempt", "[].event", "[].status", "[].conclusion", "[].workflow_id", "[].actor.login", "[].triggering_actor.login", "[].created_at", "[].updated_at", "[].run_started_at", "[].head_commit.id", "[].head_commit.message", "[].head_commit.timestamp", "[].pull_requests[].number"]
+  "allow": [
+    "[].id",
+    "[].name",
+    "[].display_title",
+    "[].html_url",
+    "[].head_branch",
+    "[].head_sha",
+    "[].path",
+    "[].run_number",
+    "[].run_attempt",
+    "[].event",
+    "[].status",
+    "[].conclusion",
+    "[].workflow_id",
+    "[].actor.login",
+    "[].triggering_actor.login",
+    "[].created_at",
+    "[].updated_at",
+    "[].run_started_at",
+    "[].head_commit.id",
+    "[].head_commit.message",
+    "[].head_commit.timestamp",
+    "[].pull_requests[].number"
+  ],
+  "hook_rule": {
+    "command_prefix": "curl",
+    "command_contains": [
+      "api.github.com/repos/",
+      "/actions/runs"
+    ]
+  }
 }

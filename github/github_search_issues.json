@@ -6,5 +6,33 @@
   "format": "json",
   "notes": "Keep issue/PR search identity, state, labels, assignees, comments, score, timestamps, and web URL.",
   "content_path": "items",
-  "allow": ["[].id", "[].number", "[].title", "[].html_url", "[].repository_url", "[].state", "[].state_reason", "[].locked", "[].draft", "[].user.login", "[].assignee.login", "[].assignees[].login", "[].labels[].name", "[].milestone.number", "[].milestone.title", "[].comments", "[].score", "[].created_at", "[].updated_at", "[].closed_at", "[].pull_request.html_url"]
+  "allow": [
+    "[].id",
+    "[].number",
+    "[].title",
+    "[].html_url",
+    "[].repository_url",
+    "[].state",
+    "[].state_reason",
+    "[].locked",
+    "[].draft",
+    "[].user.login",
+    "[].assignee.login",
+    "[].assignees[].login",
+    "[].labels[].name",
+    "[].milestone.number",
+    "[].milestone.title",
+    "[].comments",
+    "[].score",
+    "[].created_at",
+    "[].updated_at",
+    "[].closed_at",
+    "[].pull_request.html_url"
+  ],
+  "hook_rule": {
+    "command_prefix": "curl",
+    "command_contains": [
+      "api.github.com/search/issues"
+    ]
+  }
 }

@@ -5,5 +5,28 @@
   "request": "curl -sS \"https://api.github.com/repos/rust-lang/rust/issues/<number>/timeline?per_page=5\"",
   "format": "json",
   "notes": "Keep issue timeline event identity, type, actor, time, labels, commit/reference, and common assignment/review fields.",
-  "allow": ["[].id", "[].event", "[].created_at", "[].actor.login", "[].commit_id", "[].label.name", "[].assignee.login", "[].assigner.login", "[].review_requester.login", "[].requested_reviewer.login", "[].requested_team.slug", "[].rename.from", "[].rename.to", "[].state_reason"]
+  "allow": [
+    "[].id",
+    "[].event",
+    "[].created_at",
+    "[].actor.login",
+    "[].commit_id",
+    "[].label.name",
+    "[].assignee.login",
+    "[].assigner.login",
+    "[].review_requester.login",
+    "[].requested_reviewer.login",
+    "[].requested_team.slug",
+    "[].rename.from",
+    "[].rename.to",
+    "[].state_reason"
+  ],
+  "hook_rule": {
+    "command_prefix": "curl",
+    "command_contains": [
+      "api.github.com/repos/",
+      "/issues/",
+      "/timeline"
+    ]
+  }
 }

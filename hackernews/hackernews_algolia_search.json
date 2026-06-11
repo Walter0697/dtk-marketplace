@@ -20,5 +20,11 @@
     "nbHits",
     "nbPages",
     "query"
-  ]
+  ],
+  "hook_rule": {
+    "command_prefix": "curl",
+    "command_contains": [
+      "hn.algolia.com/api/v1/search"
+    ]
+  }
 }

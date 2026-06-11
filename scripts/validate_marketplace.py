@@ -20,6 +20,9 @@ PRIVATE_KEY = re.compile(r"-----BEGIN (?:[A-Z ]+ )?PRIVATE KEY-----")
 AUTHENTICATED_URL = re.compile(r"https?://[^/\s:@]+:[^/\s@]+@")
 SAFE_REFERENCE = re.compile(r"^(?:Bearer\s+|Basic\s+)?(?:\$[A-Z_][A-Z0-9_]*|\$\{[^}]+\}|<[^>]+>)$")
 
+VALID_FORMATS = {"json", "yaml", "toml", "hcl", "csv", "ini", "xml", "xaml"}
+HOOK_RULE_KEYS = {"command_prefix", "command_contains", "retention_days"}
+
 
 def config_paths() -> list[Path]:
     return sorted(
@@ -49,6 +52,31 @@ def validate_request(path: Path, request: str, errors: list[str]) -> None:
         if not is_safe_reference(value):
             errors.append(
                 f"{path}: sensitive query parameter must use an environment variable or placeholder"
+            )
+
+
+def validate_hook_rule(path: Path, hook_rule: object, errors: list[str]) -> None:
+    if not isinstance(hook_rule, dict):
+        errors.append(f"{path}: hook_rule must be an object")
+        return
+    unknown = set(hook_rule) - HOOK_RULE_KEYS
+    if unknown:
+        errors.append(f"{path}: hook_rule has unknown keys: {sorted(unknown)}")
+    prefix = hook_rule.get("command_prefix")
+    if prefix is not None and not isinstance(prefix, str):
+        errors.append(f"{path}: hook_rule.command_prefix must be a string")
+    contains = hook_rule.get("command_contains")
+    if contains is not None:
+        if not isinstance(contains, list) or not all(isinstance(s, str) for s in contains):
+            errors.append(f"{path}: hook_rule.command_contains must be an array of strings")
+    retention = hook_rule.get("retention_days")
+    if retention is not None and not isinstance(retention, int):
+        errors.append(f"{path}: hook_rule.retention_days must be an integer")
+    if isinstance(prefix, str) and "$" in prefix:
+        if not contains:
+            errors.append(
+                f"{path}: hook_rule.command_prefix contains '$' so "
+                "hook_rule.command_contains must be non-empty"
             )
 
 
@@ -96,10 +124,16 @@ def validate_configs() -> tuple[list[str], int]:
         allow = config.get("allow")
         if not isinstance(allow, list) or not all(isinstance(item, str) for item in allow):
             errors.append(f"{relative}: allow must be an array of strings")
-        if "format" in config and not isinstance(config["format"], str):
-            errors.append(f"{relative}: format must be a string")
+        fmt = config.get("format")
+        if fmt is not None:
+            if not isinstance(fmt, str):
+                errors.append(f"{relative}: format must be a string")
+            elif fmt not in VALID_FORMATS:
+                errors.append(f"{relative}: unknown format {fmt!r}, expected one of {sorted(VALID_FORMATS)}")
         if "notes" in config and not isinstance(config["notes"], str):
             errors.append(f"{relative}: notes must be a string")
+        if "hook_rule" in config:
+            validate_hook_rule(Path(relative), config["hook_rule"], errors)
 
     return errors, count
 

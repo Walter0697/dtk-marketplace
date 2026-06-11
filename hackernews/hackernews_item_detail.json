@@ -19,5 +19,11 @@
     "poll",
     "deleted",
     "dead"
-  ]
+  ],
+  "hook_rule": {
+    "command_prefix": "curl",
+    "command_contains": [
+      "hacker-news.firebaseio.com/v0/item/"
+    ]
+  }
 }

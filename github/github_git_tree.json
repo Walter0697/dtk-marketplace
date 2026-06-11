@@ -6,5 +6,18 @@
   "format": "json",
   "notes": "Keep recursive tree path, mode, type, SHA, and size. Drop one duplicate API URL per tree entry.",
   "content_path": "tree",
-  "allow": ["[].path", "[].mode", "[].type", "[].sha", "[].size"]
+  "allow": [
+    "[].path",
+    "[].mode",
+    "[].type",
+    "[].sha",
+    "[].size"
+  ],
+  "hook_rule": {
+    "command_prefix": "curl",
+    "command_contains": [
+      "api.github.com/repos/",
+      "/git/trees/"
+    ]
+  }
 }

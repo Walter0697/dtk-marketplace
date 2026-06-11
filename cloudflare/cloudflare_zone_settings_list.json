@@ -10,5 +10,12 @@
     "[].id",
     "[].value",
     "[].editable"
-  ]
+  ],
+  "hook_rule": {
+    "command_prefix": "curl",
+    "command_contains": [
+      "api.cloudflare.com/client/v4/zones/",
+      "/settings"
+    ]
+  }
 }

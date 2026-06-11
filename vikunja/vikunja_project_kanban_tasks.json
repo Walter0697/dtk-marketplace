@@ -28,5 +28,13 @@
     "[].tasks[].labels",
     "[].tasks[].assignees",
     "[].tasks[].related_tasks"
-  ]
+  ],
+  "hook_rule": {
+    "command_prefix": "curl",
+    "command_contains": [
+      "/api/v1/projects/",
+      "/views/",
+      "/tasks"
+    ]
+  }
 }

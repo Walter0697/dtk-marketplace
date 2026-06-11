@@ -5,5 +5,27 @@
   "request": "curl -sS \"https://api.github.com/repos/rust-lang/rust/events?per_page=5\"",
   "format": "json",
   "notes": "Keep public event identity, actor, repository, time, and common action/reference fields.",
-  "allow": ["[].id", "[].type", "[].public", "[].created_at", "[].actor.login", "[].repo.name", "[].org.login", "[].payload.action", "[].payload.ref", "[].payload.ref_type", "[].payload.number", "[].payload.push_id", "[].payload.size", "[].payload.distinct_size"]
+  "allow": [
+    "[].id",
+    "[].type",
+    "[].public",
+    "[].created_at",
+    "[].actor.login",
+    "[].repo.name",
+    "[].org.login",
+    "[].payload.action",
+    "[].payload.ref",
+    "[].payload.ref_type",
+    "[].payload.number",
+    "[].payload.push_id",
+    "[].payload.size",
+    "[].payload.distinct_size"
+  ],
+  "hook_rule": {
+    "command_prefix": "curl",
+    "command_contains": [
+      "api.github.com/repos/",
+      "/events"
+    ]
+  }
 }

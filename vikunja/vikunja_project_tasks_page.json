@@ -23,5 +23,13 @@
     "[].created_by.id",
     "[].created_by.name",
     "[].created_by.username"
-  ]
+  ],
+  "hook_rule": {
+    "command_prefix": "curl",
+    "command_contains": [
+      "/api/v1/projects/",
+      "/tasks?",
+      "$VIKUNJA_API_KEY"
+    ]
+  }
 }

@@ -29,5 +29,12 @@
     "properties.code",
     "properties.url",
     "geometry.coordinates"
-  ]
+  ],
+  "hook_rule": {
+    "command_prefix": "curl",
+    "command_contains": [
+      "earthquake.usgs.gov",
+      "eventid"
+    ]
+  }
 }

@@ -16,5 +16,11 @@
     "repository",
     "homepage",
     "bugs"
-  ]
+  ],
+  "hook_rule": {
+    "command_prefix": "curl",
+    "command_contains": [
+      "registry.npmjs.org/"
+    ]
+  }
 }
